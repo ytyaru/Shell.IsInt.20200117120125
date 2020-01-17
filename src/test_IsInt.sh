@@ -16,7 +16,7 @@ assert "1" "$(IsInt 2 && echo '1' || echo '0')"
 assert "1" "$(IsInt 9223372036854775807 && echo '1' || echo '0')"
 assert "1" "$(IsInt -1 && echo '1' || echo '0')"
 assert "1" "$(IsInt -2 && echo '1' || echo '0')"
-assert "1" "$(IsInt -9223372036854775807 && echo '1' || echo '0')"
+assert "1" "$(IsInt -9223372036854775808 && echo '1' || echo '0')"
 
 assert "0" "$(IsInt && echo '1' || echo '0')"
 assert "0" "$(IsInt A && echo '1' || echo '0')"
@@ -25,6 +25,6 @@ assert "0" "$(IsInt 1/2 && echo '1' || echo '0')"
 assert "0" "$(IsInt 1.1e+12 && echo '1' || echo '0')"
 assert "0" "$(IsInt 1.1e-12 && echo '1' || echo '0')"
 assert "0" "$(IsInt 9223372036854775808 && echo '1' || echo '0')"
-assert "0" "$(IsInt -9223372036854775808 && echo '1' || echo '0')" # Cause: `expr $1 - 1`
+assert "0" "$(IsInt -9223372036854775809 && echo '1' || echo '0')"
 
 fin

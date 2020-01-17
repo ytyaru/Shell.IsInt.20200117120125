@@ -66,7 +66,6 @@ NotInt
 # Note
 
 * Outside the range of minimum value to maximum value, even if it is an integer value, it will be false: `-9223372036854775808` ...` 9223372036854775807`
-* Minimum value is false: `-9223372036854775808`
 * Float is false: `0.1`
 
 # Author
